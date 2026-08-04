@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="manifest" href="/LYRA/manifest.json">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LYRA MOON AI</title>
@@ -946,5 +947,14 @@
             console.log('%cCreated by MUHAMMAD TAQI %c| %chttps://nexura.oneapp.dev/', 'color:#f0d78c;font-weight:bold;', 'color:#aaa;', 'color:#7ecbff;');
         })();
     </script>
+    <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/LYRA/sw.js')
+        .then((reg) => console.log('Service Worker registered!', reg))
+        .catch((err) => console.log('Service Worker registration failed:', err));
+    });
+  }
+</script>
 </body>
 </html>
